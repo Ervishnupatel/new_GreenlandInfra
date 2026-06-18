@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { getFounder } from '@/lib/data'
 import { founderPhilosophy as fallback } from '@/content/defaults'
 import { mediaSrc } from '@/lib/media'
+import { Reveal } from '@/components/Reveal'
 
 export async function FounderPhilosophy() {
   const founder = await getFounder()
@@ -12,20 +13,23 @@ export async function FounderPhilosophy() {
   const quote = founder?.philosophy || fallback.quote
 
   return (
-    <section className="section section-alt">
+    <section className="section section-alt" id="philosophy">
       <div className="container">
-        <header className="section-head">
-          <h2>{fallback.title}</h2>
-        </header>
+        <Reveal>
+          <header className="section-head">
+            <span className="eyebrow">Philosophy</span>
+            <h2 className="section-title">{fallback.title}</h2>
+          </header>
+        </Reveal>
         <div className="founder">
-          <div className="founder-photo">
+          <Reveal className="founder-photo">
             {url ? (
               <Image src={url} alt={alt || name} fill sizes="(max-width: 768px) 100vw, 40vw" />
             ) : (
               <div className="thumb-placeholder" aria-hidden />
             )}
-          </div>
-          <div className="founder-body">
+          </Reveal>
+          <Reveal className="founder-body" delay={120}>
             <blockquote>“{quote}”</blockquote>
             {fallback.body.map((p, i) => (
               <p key={i} className="muted">
@@ -36,7 +40,7 @@ export async function FounderPhilosophy() {
               <strong>{name}</strong>
               <span className="muted"> — {role}</span>
             </p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -209,15 +209,34 @@ export interface Project {
   id: number;
   title: string;
   /**
-   * URL path, e.g. "riverside-villa"
+   * URL path. Auto-cleaned to lowercase with hyphens (e.g. "riverside-villa"). Leave blank to generate from the title.
    */
   slug: string;
   year?: number | null;
   location?: string | null;
   category?: ('Residential' | 'Commercial' | 'Interior' | 'Urban' | 'Landscape') | null;
+  /**
+   * e.g. "420 m²"
+   */
+  area?: string | null;
+  client?: string | null;
+  /**
+   * Shown in the project spec sheet.
+   */
+  services?:
+    | (
+        | 'Architecture'
+        | 'Interiors'
+        | '3D Visualization'
+        | 'Master Planning'
+        | 'Sustainability'
+        | 'Landscape'
+        | 'Water Harvesting'
+      )[]
+    | null;
   featured?: boolean | null;
   /**
-   * Short one-line description used on cards.
+   * Short one-line description shown on cards and at the top of the project page.
    */
   summary?: string | null;
   hero: number | Media;
@@ -465,6 +484,9 @@ export interface ProjectsSelect<T extends boolean = true> {
   year?: T;
   location?: T;
   category?: T;
+  area?: T;
+  client?: T;
+  services?: T;
   featured?: T;
   summary?: T;
   hero?: T;

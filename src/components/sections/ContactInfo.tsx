@@ -1,5 +1,7 @@
 import { getSiteSettings } from '@/lib/data'
 import { site } from '@/content/defaults'
+import { Reveal } from '@/components/Reveal'
+import { SocialIcon } from '@/components/SocialIcon'
 
 export async function ContactInfo() {
   const settings = await getSiteSettings()
@@ -11,45 +13,52 @@ export async function ContactInfo() {
   const handles = Object.entries(social).filter(([, url]) => Boolean(url))
 
   return (
-    <section className="section">
+    <section className="section" id="contact">
       <div className="container">
-        <header className="section-head">
-          <h1>Contact Us</h1>
-          <p className="lead">We&apos;d love to hear about your project.</p>
-        </header>
+        <Reveal>
+          <header className="section-head">
+            <span className="eyebrow">Contact</span>
+            <h1 className="contact-headline">
+              Let&apos;s start
+              <br />
+              your project.
+            </h1>
+            <p className="lead">Tell us about your vision — we usually reply within two days.</p>
+            <a href={`mailto:${email}`} className="btn">
+              {email}
+            </a>
+          </header>
+        </Reveal>
 
-        <div className="grid grid-2">
-          <div className="contact-details">
-            <p>
-              <span className="muted">Email</span>
-              <br />
-              <a href={`mailto:${email}`}>{email}</a>
-            </p>
-            <p>
-              <span className="muted">Phone</span>
-              <br />
+        <Reveal delay={120}>
+          <div className="contact-grid">
+            <div className="contact-block">
+              <span className="contact-label">Phone</span>
               <a href={`tel:${phone}`}>{phone}</a>
-            </p>
-            <p>
-              <span className="muted">Studio</span>
-              <br />
-              {address}
-            </p>
-          </div>
-
-          <div className="social-block">
-            <p className="muted">Follow us</p>
-            <ul className="social-list">
-              {handles.map(([name, url]) => (
-                <li key={name}>
-                  <a href={url as string} target="_blank" rel="noopener noreferrer">
-                    {name[0].toUpperCase() + name.slice(1)}
+            </div>
+            <div className="contact-block">
+              <span className="contact-label">Studio</span>
+              <p>{address}</p>
+            </div>
+            <div className="contact-block">
+              <span className="contact-label">Follow</span>
+              <div className="social-icons">
+                {handles.map(([name, url]) => (
+                  <a
+                    key={name}
+                    href={url as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label={name}
+                  >
+                    <SocialIcon name={name} />
                   </a>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

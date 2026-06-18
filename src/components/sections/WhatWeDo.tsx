@@ -1,19 +1,27 @@
 import { whatWeDo } from '@/content/defaults'
+import { Reveal } from '@/components/Reveal'
 
 export function WhatWeDo() {
   return (
-    <section className="section">
+    <section className="section" id="what-we-do">
       <div className="container">
-        <header className="section-head">
-          <h2>{whatWeDo.title}</h2>
-          <p className="lead">{whatWeDo.intro}</p>
-        </header>
-        <div className="grid grid-4">
-          {whatWeDo.services.map((s) => (
-            <div key={s.title} className="card">
-              <h3>{s.title}</h3>
-              <p className="muted">{s.description}</p>
-            </div>
+        <Reveal>
+          <header className="section-head">
+            <span className="eyebrow">01 — Our Practice</span>
+            <h2 className="section-title">{whatWeDo.title}</h2>
+            <p className="lead">{whatWeDo.intro}</p>
+          </header>
+        </Reveal>
+
+        <div className="service-list">
+          {whatWeDo.services.map((s, i) => (
+            <Reveal key={s.title} delay={i * 70}>
+              <article className="service-row">
+                <span className="service-num">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="service-name">{s.title}</h3>
+                <p className="service-desc">{s.description}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

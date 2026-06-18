@@ -9,10 +9,10 @@ export default async function ProjectsPage() {
   const projects = live.length > 0 ? live : featuredProjectsFallback
 
   return (
-    <section className="section">
+    <section className="section section-alt">
       <div className="container">
         <header className="section-head">
-          <h1>Projects</h1>
+          <h1 className="section-title">Projects</h1>
           <p className="lead">Our work across architecture, interiors and urban design.</p>
         </header>
         {live.length === 0 && (
@@ -21,8 +21,8 @@ export default async function ProjectsPage() {
           </p>
         )}
         <div className="grid grid-3">
-          {projects.map((p: any) => (
-            <ProjectCard key={p.slug || p.title} project={p} />
+          {projects.map((p: any, i: number) => (
+            <ProjectCard key={p.id ?? `${p.title}-${i}`} project={p} />
           ))}
         </div>
       </div>
