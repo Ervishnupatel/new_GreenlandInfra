@@ -12,5 +12,12 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
+  upload: {
+    imageSizes: [
+      { name: 'thumbnail', width: 400 },
+      { name: 'card', width: 768 },
+      { name: 'hero', width: 1920 },
+    ],
+    focalPoint: true,
+  },
 }
