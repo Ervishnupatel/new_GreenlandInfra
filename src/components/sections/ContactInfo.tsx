@@ -2,6 +2,7 @@ import { getSiteSettings } from '@/lib/data'
 import { site } from '@/content/defaults'
 import { Reveal } from '@/components/Reveal'
 import { SocialIcon } from '@/components/SocialIcon'
+import { CornerShape } from '@/components/CornerShape'
 
 export async function ContactInfo() {
   const settings = await getSiteSettings()
@@ -13,7 +14,8 @@ export async function ContactInfo() {
   const handles = Object.entries(social).filter(([, url]) => Boolean(url))
 
   return (
-    <section className="section" id="contact">
+    <section className="section decor-section" id="contact">
+      <CornerShape variant="blob" seed={0} className="corner-shape--dark corner-shape--br" />
       <div className="container">
         <Reveal>
           <header className="section-head">

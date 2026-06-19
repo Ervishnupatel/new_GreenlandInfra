@@ -1,14 +1,13 @@
 import Link from 'next/link'
+import { CornerShape } from '@/components/CornerShape'
 
 export const metadata = { title: 'Page not found — Greenland Infra' }
 
 export default function NotFound() {
   return (
     <section className="notfound blueprint-dark">
-      <span className="plus plus--tl">+</span>
-      <span className="plus plus--tr">+</span>
-      <span className="plus plus--bl">+</span>
-      <span className="plus plus--br">+</span>
+      <CornerShape variant="blob" seed={1} className="corner-shape--tl" />
+      <CornerShape variant="blob" seed={2} className="corner-shape--br" />
       <div className="container notfound-inner">
         <span className="eyebrow notfound-eyebrow">Error 404</span>
         <h1 className="notfound-code">404</h1>

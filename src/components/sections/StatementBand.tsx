@@ -1,13 +1,12 @@
 import { statement } from '@/content/defaults'
 import { Reveal } from '@/components/Reveal'
+import { CornerShape } from '@/components/CornerShape'
 
 export function StatementBand() {
   return (
     <section className="statement blueprint-dark">
-      <span className="plus plus--tl">+</span>
-      <span className="plus plus--tr">+</span>
-      <span className="plus plus--bl">+</span>
-      <span className="plus plus--br">+</span>
+      <CornerShape variant="blob" seed={0} className="corner-shape--tr" />
+      <CornerShape variant="blob" seed={1} className="corner-shape--bl" />
       <div className="container">
         <Reveal>
           <span className="eyebrow statement-eyebrow">{statement.small}</span>

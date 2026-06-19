@@ -1321,18 +1321,25 @@ img {
 }
 .statement-text {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.3rem, 7.5vw, 6.2rem);
+  font-size: clamp(1.5rem, 3.4vw, 2.9rem);
   font-weight: 400;
-  line-height: 1.0;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  margin: 0.6rem 0 0;
+  margin: 0.8rem 0 0;
+  max-width: 24ch;
 }
 .statement-line {
   display: block;
 }
-.statement-line:nth-child(even) {
+/* only the final line is outlined — a single clean accent */
+.statement-line:last-child {
   color: transparent;
-  -webkit-text-stroke: 1.2px rgba(244, 241, 234, 0.75);
+  -webkit-text-stroke: 1px rgba(244, 241, 234, 0.7);
+}
+/* calmer, larger blueprint grid behind the statement */
+.statement.blueprint-dark::before {
+  opacity: 0.5;
+  background-size: 64px 64px;
 }
 
 /* --- About story: blueprint grid + architectural axis (replaces curve) --- */
@@ -1664,4 +1671,154 @@ img {
 .social-fallback {
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+/* --- FAQ: hover-to-open accordion with rotating plus --- */
+.faq-item {
+  padding: 0;
+  border-top: 1px solid var(--line);
+  outline: none;
+}
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  color: var(--fg);
+  transition: color 0.3s ease;
+}
+.faq-item:hover .faq-q,
+.faq-item:focus-within .faq-q {
+  color: var(--accent);
+}
+/* plus rotates on hover */
+.faq-icon {
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.faq-item:hover .faq-icon,
+.faq-item:focus-within .faq-icon {
+  transform: rotate(135deg);
+}
+/* answer expands smoothly on hover */
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.faq-a-inner {
+  overflow: hidden;
+}
+.faq-item:hover .faq-a,
+.faq-item:focus-within .faq-a {
+  grid-template-rows: 1fr;
+}
+.faq-a p {
+  margin: 0 0 1.5rem;
+  max-width: 62ch;
+}
+
+/* --- Footer: social on the right + legal links --- */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-social {
+  align-items: flex-end;
+  text-align: right;
+}
+.footer-social .social-icons {
+  justify-content: flex-end;
+}
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer-legal a {
+  color: rgba(244, 241, 234, 0.6);
+  transition: color 0.3s ease;
+}
+.footer-legal a:hover {
+  color: var(--on-dark);
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .footer-social {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-social .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* --- Decorative nested-line corner shapes (dark sections) --- */
+.corner-shape {
+  position: absolute;
+  z-index: 0;
+  width: clamp(150px, 22vw, 300px);
+  height: auto;
+  pointer-events: none;
+}
+.corner-shape * {
+  fill: none;
+  stroke: rgba(244, 241, 234, 0.13);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+.corner-shape--tl {
+  top: 0;
+  left: 0;
+  transform: translate(-42%, -42%);
+}
+.corner-shape--tr {
+  top: 0;
+  right: 0;
+  transform: translate(42%, -42%);
+}
+.corner-shape--bl {
+  bottom: 0;
+  left: 0;
+  transform: translate(-42%, 42%);
+}
+.corner-shape--br {
+  bottom: 0;
+  right: 0;
+  transform: translate(42%, 42%);
+}
+/* footer: clip the bleeding shape + keep content above it */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+.site-footer .container,
+.site-footer .wave-divider {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .corner-shape {
+    width: 120px;
+  }
+}
+
+/* dark-colored corner shapes for light sections */
+.corner-shape--dark * {
+  stroke: rgba(31, 29, 25, 0.1);
+}
+/* light sections that host a corner shape: clip + keep content above */
+.decor-section {
+  position: relative;
+  overflow: hidden;
+}
+.decor-section > .container {
+  position: relative;
+  z-index: 1;
 }

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { nav, site } from '@/content/defaults'
 import { WaveDivider } from '@/components/WaveDivider'
 import { SocialIcon } from '@/components/SocialIcon'
+import { CornerShape } from '@/components/CornerShape'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -10,6 +11,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <WaveDivider fill="var(--bg-alt)" />
+      <CornerShape variant="blob" seed={0} className="corner-shape--br" />
       <div className="container">
         <div className="footer-cta">
           <p className="eyebrow">Have a project in mind?</p>
@@ -52,9 +54,12 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>
-            © {year} {site.name}
+            © {year} {site.name}. All rights reserved.
           </span>
-          <span>All rights reserved</span>
+          <div className="footer-legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>

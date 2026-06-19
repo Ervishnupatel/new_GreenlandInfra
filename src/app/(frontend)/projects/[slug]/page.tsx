@@ -6,6 +6,7 @@ import { getProjectBySlug } from '@/lib/data'
 import { featuredProjectsFallback } from '@/content/defaults'
 import { mediaSrc } from '@/lib/media'
 import { Reveal } from '@/components/Reveal'
+import { CornerShape } from '@/components/CornerShape'
 
 export default async function ProjectDetailPage({
   params,
@@ -131,10 +132,8 @@ export default async function ProjectDetailPage({
 
       {/* CTA */}
       <section className="section pd-cta blueprint-dark">
-        <span className="plus plus--tl">+</span>
-        <span className="plus plus--tr">+</span>
-        <span className="plus plus--bl">+</span>
-        <span className="plus plus--br">+</span>
+        <CornerShape variant="blob" seed={2} className="corner-shape--tl" />
+        <CornerShape variant="blob" seed={0} className="corner-shape--br" />
         <div className="container">
           <Reveal>
             <span className="eyebrow pd-cta-eyebrow">Like what you see?</span>

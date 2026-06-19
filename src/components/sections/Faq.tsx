@@ -16,13 +16,17 @@ export async function Faq() {
         </Reveal>
         <Reveal className="faq-list" delay={100}>
           {items.map((item: any, i: number) => (
-            <details key={item.id || i} className="faq-item">
-              <summary>
+            <div key={item.id || i} className="faq-item" tabIndex={0}>
+              <div className="faq-q">
                 <span>{item.question}</span>
                 <span className="faq-icon" aria-hidden />
-              </summary>
-              <p className="muted">{item.answer}</p>
-            </details>
+              </div>
+              <div className="faq-a">
+                <div className="faq-a-inner">
+                  <p className="muted">{item.answer}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </Reveal>
       </div>

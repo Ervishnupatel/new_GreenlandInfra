@@ -1,9 +1,11 @@
 import { whatWeDo } from '@/content/defaults'
 import { Reveal } from '@/components/Reveal'
+import { CornerShape } from '@/components/CornerShape'
 
 export function WhatWeDo() {
   return (
-    <section className="section" id="what-we-do">
+    <section className="section decor-section" id="what-we-do">
+      <CornerShape variant="blob" seed={1} className="corner-shape--dark corner-shape--tr" />
       <div className="container">
         <Reveal>
           <header className="section-head">
