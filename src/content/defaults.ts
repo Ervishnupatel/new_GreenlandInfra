@@ -8,10 +8,10 @@
 
 export const site = {
   name: 'Greenland Infra',
-  tagline: 'Architecture, interiors and urban design.',
   email: 'studio@greenlandinfra.com',
-  phone: '+91 00000 00000',
-  address: '123 Studio Lane, City, Country',
+  phone: '+91 9327534682',
+  address: 'Ahmedabad, Gujarat',
+  serviceCoverage: 'Pan India',
   social: {
     instagram: 'https://instagram.com/',
     linkedin: 'https://linkedin.com/'
@@ -43,17 +43,24 @@ export const whatWeDo = {
       title: 'Architecture',
       description: 'We create functional, Vastu-compliant layouts for residential and commercial spaces, seamlessly blending modern aesthetics with structural integrity.',
     },
+     {
+        title:'Interior Design',
+        description:'Functional and aesthetically refined interior spaces designed to enhance comfort and productivity.'
+
+      },
     {
       title: '3D Visualization',
       description: '3See your project before it’s built. We provide high-quality 3D elevations and virtual walkthroughs so you can clearly visualize the final outcome before construction begins.',
     },
-    {
-      title: 'Sustainable Water Management',
-      description: 'We design and implement scalable rainwater harvesting systems for homes, schools, and industries to conserve water, reduce costs, and naturally recharge local groundwater.',
-    },
+    
     {
       title: 'End-to-End Project Execution',
       description: 'From the initial blueprint to the final handover, we manage the entire process. We ensure high-quality materials, transparent pricing, and timely delivery for a stress-free experience.',
+    },
+
+        {
+      title: 'Quantity Estimation & BOQ',
+      description: ' Accurate quantity take-offs, cost estimation, and Bill of Quantities preparation for construction projects.',
     },
   ],
 }
@@ -64,10 +71,10 @@ export const projectsSection = {
 }
 
 export const stats = [
-  { value: '120+', label: 'Projects delivered' },
-  { value: '15', label: 'Years of practice' },
-  { value: '08', label: 'Design awards' },
-  { value: '40+', label: 'Cities worldwide' },
+  { value: '25+ ', label: 'Projects delivered' },
+  { value: '04', label: 'Years of practice' },
+  { value: '05+', label: 'Experts' },
+  { value: '4+', label: 'Cities' },
 ]
 
 export const marqueeWords = [
@@ -75,7 +82,6 @@ export const marqueeWords = [
   '3D Design',
   'Water Harvesting',
   'Master Planning',
-  'Sustainability',
   'Walkthroughs',
 ]
 
@@ -87,15 +93,15 @@ export const statement = {
 export const companyStory = {
   title: 'Our Story',
   since: '2009',
-  lead: 'What began as a two-person studio has grown into a practice shaping homes, workplaces and cities — without ever losing its love for the detail.',
+  lead: 'Greenland is a multidisciplinary engineering, architecture, and interior design consultancy delivering innovative and high-quality solutions across India.',
   body: [
-    'Greenland Infra began with a simple conviction: that good design improves everyday life. Our first commission was a single home, drawn by hand across countless evenings.',
-    'Since then we have grown into a multidisciplinary studio working across architecture, interiors and urban design — but our approach has stayed the same. We listen closely, build responsibly, and sweat the details.',
-    'Every project is an opportunity to make a place that is useful, beautiful and built to last — for the people who live and work within it.',
+    ' Greenland specializes in engineering, architecture, interior design, construction management, project management consultancy, and plumbing design',
+    'We create functional, aesthetically refined, and technically robust solutions for residential,',
+    'commercial, and infrastructure projects, combining design excellence with engineering expertise.',
   ],
   milestones: [
     {
-      year: '2009',
+      year: ' 2023',
       title: 'The beginning',
       text: 'Founded as a small residential studio with a single commission and a big conviction.',
     },
@@ -119,8 +125,8 @@ export const companyStory = {
 
 export const founderPhilosophy = {
   title: "Founder's Philosophy",
-  name: 'Founder Name',
-  role: 'Principal Architect',
+  name: 'Riddham Patel',
+  role: 'Architect & Founder',
   quote: 'Architecture is not about buildings. It is about the life that happens inside them.',
   body: [
     'I believe design should be quiet and generous — serving the people who use a space rather than the ego of the architect.',
@@ -130,24 +136,24 @@ export const founderPhilosophy = {
 
 export const faqs = [
   {
-    question: 'What types of projects do you take on?',
+    question: 'What services do we provide?',
     answer:
-      'We work on residential, commercial, interior and urban projects of varying scales — from private homes to public spaces.',
+      ' We  offer Architecture Design, Interior Design, Construction Consultancy, Project Management, Rainwater Harvesting Solutions, Plumbing Design, Quantity Estimation, and BOQ Preparation services.',
   },
   {
-    question: 'Where are you based and do you travel?',
+    question: 'Where is Greenland located?',
     answer:
-      'Our studio is based locally, and we take on projects nationally and internationally depending on scope.',
+      'Our head office is located in Ahmedabad, Gujarat, and we provide services across India.',
   },
   {
-    question: 'How does the design process work?',
+    question: 'Do you work on projects outside Gujarat?',
     answer:
-      'We move through clear stages: brief and feasibility, concept design, design development, and construction support — keeping you involved at every step.',
+      'Yes. Greenland provides consultancy, design, and project management services for projects across India.',
   },
   {
-    question: 'How do I start a project with you?',
+    question: 'How do I start a project with Greenland?',
     answer:
-      'Reach out via the contact page with a few details about your project. We will set up an introductory conversation to understand your needs.',
+      'Simply contact us with your project details. We will schedule a consultation, understand your requirements, and guide you through the entire process from concept to completion',
   },
 ]
 
