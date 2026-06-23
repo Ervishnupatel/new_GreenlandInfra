@@ -8,6 +8,7 @@
 
 export const site = {
   name: 'Greenland Infra',
+  tagline: 'Architecture, interiors & sustainable infrastructure',
   email: 'studio@greenlandinfra.com',
   phone: '+91 9327534682',
   address: 'Ahmedabad, Gujarat',
