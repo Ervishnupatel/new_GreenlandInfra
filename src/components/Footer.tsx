@@ -8,10 +8,10 @@ export function Footer() {
   const year = new Date().getFullYear()
   const socials = Object.entries(site.social).filter(([, url]) => Boolean(url))
 
-  return (
+  return ( 
     <footer className="site-footer">
       <WaveDivider fill="var(--bg-alt)" />
-      <CornerShape variant="blob" seed={0} className="corner-shape--br" />
+      <CornerShape variant="blob" seed={0} className="corner-shape--br " />
       <div className="container">
         <div className="footer-cta">
           <p className="eyebrow">Have a project in mind?</p>
